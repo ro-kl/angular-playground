@@ -1,0 +1,11 @@
+<h1>string interpolation</h1>
+{{ aSimpleString }}
+<hr>
+<h1>property binding</h1>
+<p [innerHtml]="aSimpleString"></p>
+<input type="text" value="{{ aSimpleString }}">
+<input type="text" [value]="aSimpleString">
+<hr>
+<h1>ngClass/ngStyle</h1>
+<p [ngClass]="{'red-color': attachClass}">text with red color</p>
+<p [ngStyle]="{'color': 'green'}">text with green color</p>
