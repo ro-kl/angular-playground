@@ -15,4 +15,8 @@ export class DataBindingComponent {
       this.attachClass = false;
     }, 2500);
   }
+
+  onClick(event: Event) {
+    alert('clicked');
+  }
 }

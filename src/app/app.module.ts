@@ -2,16 +2,20 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { OtherComponent } from './component-handling/other/other.component';
-import { AnotherComponent } from './component-handling/another/another.component';
-import { DataBindingComponent } from './data-binding/data-binding.component';
+import { OtherComponent } from './componentHandling/other/other.component';
+import { AnotherComponent } from './componentHandling/another/another.component';
+import { DataBindingComponent } from './dataBinding/simpleDataBinding/data-binding.component';
+import { ExtendedDataBindingComponent } from './dataBinding/extendedDataBinding/extended-data-binding.component';
+import { EventBindingComponent } from './dataBinding/eventBinding/event-binding.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     OtherComponent,
     AnotherComponent,
-    DataBindingComponent
+    DataBindingComponent,
+    ExtendedDataBindingComponent,
+    EventBindingComponent
   ],
   imports: [
     BrowserModule
