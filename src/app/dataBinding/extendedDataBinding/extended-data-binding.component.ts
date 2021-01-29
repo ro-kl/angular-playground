@@ -6,6 +6,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./extended-data-binding.component.css']
 })
 export class ExtendedDataBindingComponent {
-  @Input() name: string;
+  @Input('nameData') name: string;
 
 }

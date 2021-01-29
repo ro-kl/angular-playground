@@ -11,10 +11,17 @@
 <p [ngStyle]="{'color': 'green'}">text with green color</p>
 <hr>
 <h1>extended property binding</h1>
-<app-extended-data-binding [name]="'Foo'"></app-extended-data-binding>
+<app-extended-data-binding [nameData]="'Foo'"></app-extended-data-binding>
 <hr>
 <h1>event binding</h1>
 <button (click)="onClick($event)">click me</button>
 <hr>
 <h1>own event binding</h1>
 <app-event-binding (clicked)="aSimpleString = $event"></app-event-binding>
+<hr>
+<h1>two way binding</h1>
+<input type="text" [value]="aSimpleString" (keyup)="aSimpleString  = input.value" #input>
+<input type="text" [(ngModel)]="aSimpleString">
+<hr>
+<h1>element reference</h1>
+<app-element-reference #parentElement>this ist text from the parent element</app-element-reference>
