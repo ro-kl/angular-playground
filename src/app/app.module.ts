@@ -9,6 +9,9 @@ import { DataBindingComponent } from './dataBinding/simpleDataBinding/data-bindi
 import { ExtendedDataBindingComponent } from './dataBinding/extendedDataBinding/extended-data-binding.component';
 import { EventBindingComponent } from './dataBinding/eventBinding/event-binding.component';
 import { ElementReferenceComponent } from './elementReference/element-reference.component';
+import { MemoryPipePipe } from './shared/memory-pipe.pipe';
+import { PipePlaygroundComponent } from './pipes/pipe-playground/pipe-playground.component';
+import { CurrencyPipePipe } from './shared/currency-pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { ElementReferenceComponent } from './elementReference/element-reference.
     DataBindingComponent,
     ExtendedDataBindingComponent,
     EventBindingComponent,
-    ElementReferenceComponent
+    ElementReferenceComponent,
+    MemoryPipePipe,
+    PipePlaygroundComponent,
+    CurrencyPipePipe
   ],
   imports: [
     BrowserModule,

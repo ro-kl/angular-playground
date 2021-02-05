@@ -1,0 +1,9 @@
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let memoryItem of memoryData">{{ memoryItem }}KB => {{memoryItem | memoryPipe}}
+  </li>
+</ul>
+<hr>
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let currencyItem of currencyData">{{ currencyItem[0] }}{{ currencyItem[1] }} => {{currencyItem | currencyPipe}}
+  </li>
+</ul>
