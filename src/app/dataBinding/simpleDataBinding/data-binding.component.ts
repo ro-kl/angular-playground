@@ -10,10 +10,10 @@ export class DataBindingComponent {
   attachClass: Boolean = true;
 
   constructor() {
-    setTimeout(() => {
-      this.aSimpleString = "I'm another string";
-      this.attachClass = false;
-    }, 2500);
+    // setTimeout(() => {
+    //   this.aSimpleString = "I'm another string";
+    //   this.attachClass = false;
+    // }, 2500);
   }
 
   onClick(event: Event) {

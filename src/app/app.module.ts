@@ -12,7 +12,16 @@ import { ElementReferenceComponent } from './elementReference/element-reference.
 import { MemoryPipePipe } from './shared/memory-pipe.pipe';
 import { PipePlaygroundComponent } from './pipes/pipe-playground/pipe-playground.component';
 import { CurrencyPipePipe } from './shared/currency-pipe.pipe';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatIconModule } from '@angular/material/icon';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatTableModule } from '@angular/material/table';
+import { MatListModule } from '@angular/material/list';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +37,17 @@ import { CurrencyPipePipe } from './shared/currency-pipe.pipe';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    MatListModule,
+    MatTableModule,
+    MatTabsModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    MatCardModule,
+    MatButtonModule,
+    MatDividerModule,
+    MatGridListModule,
+    MatIconModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

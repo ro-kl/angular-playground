@@ -1,27 +1,60 @@
-<h1>string interpolation</h1>
-{{ aSimpleString }}
-<hr>
-<h1>property binding</h1>
-<p [innerHtml]="aSimpleString"></p>
-<input type="text" value="{{ aSimpleString }}">
-<input type="text" [value]="aSimpleString">
-<hr>
-<h1>ngClass/ngStyle</h1>
-<p [ngClass]="{'red-color': attachClass}">text with red color</p>
-<p [ngStyle]="{'color': 'green'}">text with green color</p>
-<hr>
-<h1>extended property binding</h1>
-<app-extended-data-binding [nameData]="'Foo'"></app-extended-data-binding>
-<hr>
-<h1>event binding</h1>
-<button (click)="onClick($event)">click me</button>
-<hr>
-<h1>own event binding</h1>
-<app-event-binding (clicked)="aSimpleString = $event"></app-event-binding>
-<hr>
-<h1>two way binding</h1>
-<input type="text" [value]="aSimpleString" (keyup)="aSimpleString  = input.value" #input>
-<input type="text" [(ngModel)]="aSimpleString">
-<hr>
-<h1>element reference</h1>
-<app-element-reference #parentElement>this ist text from the parent element</app-element-reference>
+<mat-card [ngClass]="{'card-main-layout': true}">
+    <h1>string interpolation</h1>
+    <mat-divider></mat-divider>
+
+    {{ aSimpleString }} <!--  alle primitiven datentypen -->
+
+</mat-card>
+
+<mat-card [ngClass]="{'card-main-layout': true}">
+    <h1>property binding</h1>
+    <mat-divider></mat-divider>
+
+    <p [innerHtml]="aSimpleString"></p> <!-- DOM propertys-->
+    <input type="text" value="{{ aSimpleString }}"><br>
+    <input type="text" [value]="aSimpleString"> <!-- hier übernimmt angular, obt beide varianten -->
+
+</mat-card>
+
+<mat-card [ngClass]="{'card-main-layout': true}">
+    <h1>ngClass/ngStyle</h1>
+    <mat-divider></mat-divider>
+
+    <p [ngClass]="{'red-color': attachClass}">text with red color</p>
+    <!-- directive propertys / eigene propertys, keine {{  }} möglich -->
+    <p [ngStyle]="{'color': 'green'}">text with green color</p>
+
+</mat-card>
+
+<mat-card [ngClass]="{'card-main-layout': true}">
+    <h1>extended property binding</h1>
+    <mat-divider></mat-divider>
+
+    <app-extended-data-binding [nameData]="'Foo'"></app-extended-data-binding> <!-- Eigene Events - EventEmitter - @Input -->
+
+</mat-card>
+
+<mat-card [ngClass]="{'card-main-layout': true}">
+    <h1>event binding</h1>
+    <mat-divider></mat-divider>
+
+    <button (click)="onClick($event)" mat-raised-button color="primary">click me</button>
+
+</mat-card>
+
+<mat-card [ngClass]="{'card-main-layout': true}">
+    <h1>own event binding</h1>
+    <mat-divider></mat-divider>
+
+    <app-event-binding (clicked)="aSimpleString = $event"></app-event-binding> <!-- im template event-binding -->
+
+</mat-card>
+
+<mat-card [ngClass]="{'card-main-layout': true}">
+    <h1>two way binding</h1>
+    <mat-divider></mat-divider>
+
+    <input type="text" [value]="aSimpleString" (keyup)="aSimpleString = input.value" #input><br>
+    <input type="text" [(ngModel)]="aSimpleString"> <!-- FormsModule wird benötigt -->
+
+</mat-card>

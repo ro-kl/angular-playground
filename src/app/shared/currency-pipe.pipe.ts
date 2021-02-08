@@ -4,7 +4,7 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'currencyPipe'
 })
 export class CurrencyPipePipe implements PipeTransform {
-  transform(currencyInput: Array<any>): string {
+  transform(currencyAmount: number, currency: string): string {
     const usdCurrencyMapping: Array<any> = [
       ['USD', 1],
       ['EUR', 0.83],
@@ -25,7 +25,7 @@ export class CurrencyPipePipe implements PipeTransform {
       ['EUR', eurCurrencyMapping],
       ['GBP', gbpCurrencyMapping]
     ];
-    const selectedCurrencyMapping = currencyMapping.filter(foreignCurrency => foreignCurrency[0] === currencyInput[1]);
+    const selectedCurrencyMapping = currencyMapping.filter(foreignCurrency => foreignCurrency[0] === currency);
 
     let outputString = 'sorry, currency not found';
 
@@ -33,7 +33,7 @@ export class CurrencyPipePipe implements PipeTransform {
       outputString = '';
 
       selectedCurrencyMapping[0][1].forEach(currency => {
-        outputString += ` ${(currencyInput[0] * currency[1]).toFixed(2)}${currency[0]} `;
+        outputString += `  ${(currencyAmount * currency[1]).toFixed(2)}${currency[0]}  `;
       });
     }
 

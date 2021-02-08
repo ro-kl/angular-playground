@@ -1,9 +1,34 @@
-<ul class="list-group">
-  <li class="list-group-item" *ngFor="let memoryItem of memoryData">{{ memoryItem }}KB => {{memoryItem | memoryPipe}}
-  </li>
-</ul>
-<hr>
-<ul class="list-group">
-  <li class="list-group-item" *ngFor="let currencyItem of currencyData">{{ currencyItem[0] }}{{ currencyItem[1] }} => {{currencyItem | currencyPipe}}
-  </li>
-</ul>
+<mat-tab-group>
+  <mat-tab label="MEMORY">
+    <table mat-table [dataSource]="memoryData" class="mat-elevation-z8">
+      <ng-container matColumnDef="memory">
+        <th mat-header-cell *matHeaderCellDef> memory </th>
+        <td mat-cell *matCellDef="let element" [ngStyle]="{'text-align': 'left'}"> {{element.memory}}KB </td>
+      </ng-container>
+
+      <ng-container matColumnDef="transformedMemory">
+        <th mat-header-cell *matHeaderCellDef> transformed memory </th>
+        <td mat-cell *matCellDef="let element" [ngStyle]="{'text-align': 'left'}"> {{element.memory | memoryPipe}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedMemoryColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedMemoryColumns;"></tr>
+    </table>
+  </mat-tab>
+  <mat-tab label="CURRENCY">
+    <table mat-table [dataSource]="currencyData" class="mat-elevation-z8">
+      <ng-container matColumnDef="currency">
+        <th mat-header-cell *matHeaderCellDef> currency </th>
+        <td mat-cell *matCellDef="let element" [ngStyle]="{'text-align': 'left'}"> {{element.amount}} {{element.currency}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="transformedCurrency">
+        <th mat-header-cell *matHeaderCellDef> transformed currency </th>
+        <td mat-cell *matCellDef="let element" [ngStyle]="{'text-align': 'left'}"> {{element.amount | currencyPipe:element.currency}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedCurrencyColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedCurrencyColumns;"></tr>
+    </table>
+  </mat-tab>
+</mat-tab-group>
